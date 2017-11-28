@@ -1,0 +1,40 @@
+Select CrimeCodeDescription, COUNT(CrimeCodeDescription)
+AS TOTAL FROM LosAngeles
+WHERE CrimeCodeDescription = ‘CRIMINAL HOMICIDE’
+GROUP BY CrimeCodeDescription;
+
+Select CrimeCodeDescription, COUNT(CrimeCodeDescription)
+AS TOTAL, AreaName
+FROM LosAngeles
+WHERE CrimeCodeDescription = ‘CRIMINAL HOMICIDE’
+GROUP BY CrimeCodeDescription, AreaName
+SORT BY TOTAL DESC
+LIMIT 5;
+
+Select CrimeCodeDescription, count (CrimeCodeDescription) AS total from losangeles
+Group By CrimeCodeDescription
+Sort By Total DESC;
+
+Select CrimeCodeDescription, count (CrimeCodeDescription) AS total from losangeles
+Group By CrimeCodeDescription
+Sort By Total DESC
+LIMIT 5;
+
+SELECT Premise_Description
+COUNT (Premise_Description) AS total 
+FROM losangeles
+GROUP BY Premise_Description
+SORT BY total DESC
+Limit 5; 
+
+Select areaname, count(*) AS cntareaname FROM losangeles
+Group by areaname
+Order by cntareaname 
+DESC;
+
+Select CrimeCodeDescription, count(CrimeCodeDescription) AS total, AreaName, Location
+FROM losangeles
+WHERE CrimeCodeDescription = ‘BATTERY - SIMPLE ASSAULT’
+Group By CrimeCodeDescription, AreaName, Location
+SORT BY total DESC
+LIMIT 5;
