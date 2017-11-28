@@ -1,0 +1,20 @@
+Crime Data Loaded
+
+(Los Angeles)
+wget -O Crime_Data_from_2010_to_Present.csv 
+https://s3-us-west-1.amazonaws.com/dreab/Crime_Data_from_2010_to_Present.csv
+
+(Chicago
+wget -O Crimes_-_2001_to_present.cs
+https://s3-us-west-1.amazonaws.com/dreab/Crimes_-_2001_to_present-2.csv
+
+Creating Los_Angeles & Chicago Crime Data File directory of HDFS:
+-bash-4.1$ hdfs dfs -mkdir Crime
+-bash-4.1$ hdfs dfs -mkdir Crime/Chicago
+-bash-4.1$ hdfs dfs -mkdir Crime/Los_Angeles
+ 
+Uploading Los_Angeles & Chicago Crime Data to hdfs successfully & make sure they uploaded:
+-bash-4.1$ hdfs dfs -put Crimes_-_2001_to_present.csv Crime Crime/Chicago/
+-bash-4.1$ hdfs dfs -put Crime_Data_from_2010_to_Present.csv Crime/Los_Angeles/
+-bash-4.1$ hdfs dfs -ls Crime/Chicago/
+-bash-4.1$ hdfs dfs -ls Crime/Los_Angeles/
