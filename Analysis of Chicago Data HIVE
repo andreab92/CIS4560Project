@@ -1,0 +1,55 @@
+Select PrimaryType, COUNT(PrimaryType) AS TOTAL
+FROM chicago
+WHERE PrimaryType = ‘HOMICIDE’
+GROUP BY PrimaryType;
+
+INSERT OVERWRITE DIRECTORY '/user/cnguon1/output/'
+SELECT primarytype, latitude, longitude 
+FROM chicago 
+WHERE primarytype = 'HOMICIDE';
+
+
+
+
+set hive.cli.print.header=true;
+Select primarytype, count (primarytype) AS total
+from chicago
+group by primarytype
+sort by total DESC;
+
+Select primarytype, count (primarytype) AS total
+from chicago
+group by primarytype
+sort by total DESC
+limit 5;
+
+Select primarytype, count (primarytype) AS total
+from chicago
+group by primarytype
+sort by total ASC
+limit 5;
+
+SELECT locationdescription,
+COUNT(locationdescription) AS total 
+FROM chicago
+GROUP BY locationdescription
+SORT BY total DESC
+Limit 5; 
+
+Select PrimaryType, count(PrimaryType) AS total, Block
+FROM Chicago
+WHERE PrimaryType = ‘THEFT’
+Group By PrimaryType, Block
+SORT BY total DESC
+LIMIT 5;
+
+Select LocationDescription, count (LocationDescription) AS total
+FROM chicago
+GROUP by LocationDescription
+SORT by total DESC
+Limit 3;
+
+Select block, count(*) AS cntareaname FROM chicago
+Group by block
+Order by cntareaname DESC
+Limit 20;
