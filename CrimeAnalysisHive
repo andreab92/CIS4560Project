@@ -1,0 +1,68 @@
+--Creating Los Angeles Table
+
+DROP TABLE IF EXISTS Los_Angeles;
+--create the LACrimeData table on comma-separated crime data
+CREATE EXTERNAL TABLE IF NOT EXISTS Los_Angeles(
+DRNumber INT,
+DateReported STRING,
+DateOccurred STRING,
+TimeOccurred STRING,
+AreaID STRING,
+AreaName STRING,
+ReportingDistrict STRING,
+CrimeCode STRING,
+CrimeCodeDescription STRING,
+MOCodes STRING,
+VictimAge STRING,
+VictimSex STRING,
+VictimDescent STRING,
+PremiseCode STRING,
+PremiseDescription STRING,
+WeaponUsedCode STRING,
+WeaponDescription STRING,
+StatusCode INT,
+StatusDescription STRING,
+CrimeCode1 STRING,
+CrimeCode2 STRING,
+CrimeCode3 STRING,
+CrimeCode4 STRING,
+Address STRING,
+CrossStreet STRING,
+Location DOUBLE)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+STORED AS TEXTFILE LOCATION '/user/drea17/'
+TBLPROPERTIES ('skip.header.line.count'='1');
+
+
+
+--Creating Chicago Table
+DROP TABLE IF EXISTS chicago;
+--create the CHICrimeData table on comma-separated crime data
+
+CREATE EXTERNAL TABLE IF NOT EXISTS chicago(
+ID STRING,
+CaseNumber STRING,
+DateOccured STRING,
+Block STRING,
+IUCR STRING,
+PrimaryType STRING,
+Description STRING,
+LocationDescription STRING,
+Arrest STRING,
+Domestic STRING,
+Beat STRING,
+District STRING,
+Ward STRING,
+Communityarea STRING,
+FBIcode STRING,
+XCoordinate STRING,
+YCoordinate STRING,
+Year STRING,
+UpdatedOn STRING,
+Latitude STRING,
+Longitude STRING,
+Location STRING
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+STORED AS TEXTFILE LOCATION '/user/YOURUSER/Crime/Chicago/'
+TBLPROPERTIES ('skip.header.line.count'='1');
