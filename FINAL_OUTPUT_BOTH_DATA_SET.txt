@@ -1,0 +1,13 @@
+--LOS ANGELES
+
+INSERT OVERWRITE DIRECTORY '/user/cnguon1/output3/'
+SELECT CrimeCodeDescription,address, location
+FROM losangeles 
+WHERE CrimeCodeDescription = 'CRIMINAL HOMICIDE';
+
+--CHICAGO
+
+INSERT OVERWRITE DIRECTORY '/user/cnguon1/output/'
+SELECT primarytype, latitude, longitude 
+FROM chicago 
+WHERE primarytype = 'HOMICIDE';
